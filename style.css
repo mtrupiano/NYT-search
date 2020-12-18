@@ -1,7 +1,37 @@
+body {
+    margin-top: 10px;
+    background-color: white;
+}
+
 .input-group{
-    padding: 25px;
+    padding: 10px;
 }
 
 .articles{
-    padding: 25px;
+    padding: 10px;
 }
+
+.btn {
+    background-color: #3d52a1;
+}
+
+.jumbotron {
+    background-color: #3d52a1;
+    color: white;
+    font-weight: 400px;
+}
+
+.search-results {
+    background-color: #3d52a1;
+    padding: 5px;
+}
+
+.results-container{
+    margin-top: 10px;
+
+}
+
+.panel-heading {
+    color: white;
+}
+
