@@ -14,7 +14,7 @@ $(document).ready(function() {
         }
         
         if (endYear !== "") {
-            beginYear = "&end_date=" + endYear + "1231";
+            endYear = "&end_date=" + endYear + "1231";
         }
 
         var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="
