@@ -14,7 +14,7 @@ $(document).ready(function() {
         }
         
         if (endYear !== "") {
-            beginYear = "&end_date=" + endYear + "0101";
+            endYear = "&end_date=" + endYear + "1231";
         }
 
         var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="
@@ -22,18 +22,25 @@ $(document).ready(function() {
             "&api-key=u7EoghAalikiEAE7MRKG4oMkPIm9RhOE";
     
         $.ajax({url: queryURL, method: "GET"}).then(function(response) {
-            renderArticles(response.docs);
-            console.log(response);
+            renderArticles(response.response.docs);
+            console.log(response.response);
         });
 
     });
 
-    $("#clear-button").click(function(event) {
-
+    $("#clear-results-button").click(function(event) {
+        // set results div inner HTML to empty
+        $("#results").html("");
     });
 
     function renderArticles(articles) {
-        
+        for (var i = 0; i < articles.length; i++) {
+            var newDiv = $("<div>").addClass("row");
+            newDiv.append($("<h3>").text(articles[i].headline.main));
+            newDiv.append($("<h4>").text(articles[i].byline.original));
+            $("#results").append(newDiv);
+        }
+
     }
 
 });
