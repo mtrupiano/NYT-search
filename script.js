@@ -1,5 +1,4 @@
 
-
 $(document).ready(function() {
 
     $("#search-button").click(function(event) {
