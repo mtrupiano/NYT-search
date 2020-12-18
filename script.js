@@ -1,15 +1,9 @@
 
 
 $(document).ready(function() {
-    
-    var searchBtn;
-    var clearBtn;
-    var beginYearField;
-    var endYearField;
-    var numberField;
-    var resultsContainer;
 
     $("#search-btn").on("click", function(event) {
+        event.preventDefault();
 
         var query       = $("#search-term-input").val();
         var beginYear   = $("#start-year-input").val();
